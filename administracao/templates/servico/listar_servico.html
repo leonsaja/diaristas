@@ -1,0 +1,39 @@
+{% extends 'base/base.html'%}
+
+    {%block title%}Listar Serviços{%endblock title%}
+    {% block content %}
+    <div class="card">
+        <div class="card-header">Lista de serviços
+            <div class="float-right"><a href="{% url 'administracao:cadastrar_servico'%}"class="btn p-0">Cadastrar Serviço</a></div>
+        </div>
+    <div class="card-body p-0">
+        <table class="table table-consed">
+            <thead>
+                <tr>
+                <th>Nome</th>
+                <th>Porcentagem de Comissao</th>
+                <th>Valor Minimo</th>
+                <th>Opcao</th>
+            </tr>
+            </thead>
+            <tbody>
+        
+            
+                {%for servico in servicos %}
+                <tr>
+                        <td>{{servico.nome}}</td>
+                        <td>{{servico.porcentagem_comissao}}</td>
+                        <td>{{servico.valor_minimo}}</td>
+                        <td>
+                            <a href="{% url 'administracao:editar_servico' servico.id %}" class="btn btn-primary">Editar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+    {%endblock content %}
+    
