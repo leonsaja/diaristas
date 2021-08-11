@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms.form_servico import ServicoForm
-from .models import  Service
+from administracao.forms.form_servico import ServicoForm
+from administracao.models import  Service
 
 
 def cadastrar_servico(request):

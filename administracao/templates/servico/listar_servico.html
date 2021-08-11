@@ -2,11 +2,13 @@
 
     {%block title%}Listar Serviços{%endblock title%}
     {% block content %}
+<div class="container">
     <div class="card">
         <div class="card-header">Lista de serviços
-            <div class="float-right"><a href="{% url 'administracao:cadastrar_servico'%}"class="btn p-0">Cadastrar Serviço</a></div>
+            <div class="float-right"><a href="{% url 'administracao:cadastrar_servico'%}"class="btn btn-primary btn-sm">Cadastrar Serviço</a></div>
         </div>
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table table-consed">
             <thead>
                 <tr>
@@ -33,7 +35,10 @@
                 
             </tbody>
         </table>
+            </div>
     </div>
+
 </div>
+    </div>
     {%endblock content %}
     
