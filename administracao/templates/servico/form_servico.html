@@ -1,11 +1,23 @@
 {% extends 'base/base.html'%}
 {% load bootstrap4 %} 
-    {%block title%}Cadastrar Serviço{%endblock title%}
-    {% block content %}
+    {%block title%}
+    {% if request.resolver_match.url_name == 'cadastrar_servico' %}
+        Cadastro de Serviço
+    {%else%}
+        Editar Serviço
+        {%endif%}
+    {%endblock title%}
+{% block content %}
 
     <div class="card card-primary">
         <div class="card-header">
-            <div class="card-title">Cadastro de Serviço</div>
+            <div class="card-title">
+                 {% if request.resolver_match.url_name == 'cadastrar_servico' %}
+                    Cadastro de Serviço
+                 {%else%}
+                    Editar Serviço
+                 {%endif%}
+            </div>
         </div>
         <div class="card-body">
             <form method="POST">
@@ -15,6 +27,5 @@
             </form>
          </div>
     </div>
-    
-    {%endblock content %}
+{%endblock content %}
     

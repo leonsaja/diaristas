@@ -1,7 +1,7 @@
-from  django.contrib.auth.forms import UserCreationForm
+from  django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from django.contrib.auth import get_user_model
 
-class UsuarioForms(UserCreationForm):
+class CadastroUsuarioForms(UserCreationForm):
     class Meta:
         model = get_user_model()
         fields = ['username','first_name', 'email', 'password1', 'password2']
@@ -14,3 +14,10 @@ class UsuarioForms(UserCreationForm):
             user.save()
 
         return user
+
+class EditarUsuarioForm(UserChangeForm):
+    password = None
+
+    class Meta:
+        model=get_user_model()
+        fields= ['username','first_name','email']

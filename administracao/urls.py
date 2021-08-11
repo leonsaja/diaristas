@@ -1,6 +1,6 @@
 from django.urls import  path
 from .views.service_views import cadastrar_servico,listar_servicos,editar_servico
-from .views.usuario_views import cadastrar_usuario,listar_usuarios
+from .views.usuario_views import cadastrar_usuario,listar_usuarios,editar_usuario
 app_name='administracao'
 urlpatterns = [
     path('cadastrar_servico/',cadastrar_servico, name='cadastrar_servico'),
@@ -11,6 +11,7 @@ urlpatterns = [
    #Usuario
 
    path('cadastrar_usuario/', cadastrar_usuario, name='cadastrar_usuario'),
-   path('lista_usuarios/', listar_usuarios, name='listar_usuarios')
+   path('lista_usuarios/', listar_usuarios, name='listar_usuarios'),
+   path('editar_usuario/<int:id>', editar_usuario, name='editar_usuario'),
 
 ]

@@ -1,10 +1,14 @@
 {% extends 'base/base.html'%}
 
 {% block content%}
-
+<div class="container">
 <div class="card-primary">
     <div class="card-header">
-        <div class="card-title">Lista de Usuários</div>
+
+        Lista de usuários
+        <div class="float-right"><a href="{% url 'administracao:cadastrar_usuario'%}"class="btn btn-primary btn-sm">Cadastrar Usuário</a></div>
+
+
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -22,7 +26,7 @@
                      <td>{{usuario.id}}</td>
                     <td>{{usuario.username}}</td>
                     <td>{{usuario.email}}</td>
-                    <td><a href="#" class="btn btn-primary">Editar</a></td>
+                    <td><a href="{% url 'administracao:editar_usuario' usuario.id %}" class="btn btn-primary">Editar</a></td>
                 </tr>
                 {%endfor %}
                 </tbody>
@@ -30,4 +34,5 @@
         </div>
     </div>
 </div>
+    </div>
 {% endblock content%}
