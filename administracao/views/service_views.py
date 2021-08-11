@@ -12,10 +12,10 @@ def cadastrar_servico(request):
         
     return render(request, 'servico/form_servico.html',{'form':form})
 
-def lista_servico(request):
+def listar_servicos(request):
     context={}
     context['servicos']=Service.objects.all()
-    return render(request, 'servico/listar_servico.html',context)
+    return render(request, 'servico/lista_servicos.html',context)
 
 def editar_servico(request,id):
 

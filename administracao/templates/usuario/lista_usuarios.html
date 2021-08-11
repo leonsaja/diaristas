@@ -1,0 +1,33 @@
+{% extends 'base/base.html'%}
+
+{% block content%}
+
+<div class="card-primary">
+    <div class="card-header">
+        <div class="card-title">Lista de Usuários</div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-consed">
+                <thead>
+                <th>#</th>
+                <th>Usuário</th>
+                <th>Email</th>
+                <th>Opção</th>
+
+                </thead>
+                <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                     <td>{{usuario.id}}</td>
+                    <td>{{usuario.username}}</td>
+                    <td>{{usuario.email}}</td>
+                    <td><a href="#" class="btn btn-primary">Editar</a></td>
+                </tr>
+                {%endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content%}
