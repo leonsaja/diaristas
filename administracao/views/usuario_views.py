@@ -1,14 +1,20 @@
 from django.shortcuts import render,redirect
 from ..forms.form_usuario import CadastroUsuarioForms,EditarUsuarioForm
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> cbaf1d1e81a58c4671f089b0910e966b481efa09
 from django.contrib.auth.decorators import login_required
 
 
 @login_required
+<<<<<<< HEAD
 =======
 from django.contrib.auth import get_user_model
 
 >>>>>>> parent of 3451a08... autenticacao  finalizada
+=======
+>>>>>>> cbaf1d1e81a58c4671f089b0910e966b481efa09
 def cadastrar_usuario(request):
     form = CadastroUsuarioForms()
     if request.method=='POST':

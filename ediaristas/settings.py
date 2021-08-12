@@ -128,11 +128,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 LOGIN_REDIRECT_URL='administracao:listar_servicos'
 LOGOUT_REDIRECT_URL='administracao:login_usuario'
 
 =======
 >>>>>>> parent of 3451a08... autenticacao  finalizada
+=======
+LOGIN_REDIRECT_URL='administracao:listar_servicos'
+LOGOUT_REDIRECT_URL='administracao:login_usuario'
+
+>>>>>>> cbaf1d1e81a58c4671f089b0910e966b481efa09
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
