@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from django.contrib.messages import constants
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -127,17 +127,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+<<<<<<< HEAD
+LOGIN_REDIRECT_URL='administracao:listar_servicos'
+LOGOUT_REDIRECT_URL='administracao:login_usuario'
 
-
+=======
+>>>>>>> parent of 3451a08... autenticacao  finalizada
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MESSAGE_TAGS = {
-
-    constants.ERROR: 'alert-danger',
-    constants.WARNING: 'alert-warning',
-    constants.DEBUG: 'alert-info',
-    constants.SUCCESS: 'alert-success',
-    constants.INFO: 'alert-info',
-}
