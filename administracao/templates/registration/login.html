@@ -1,0 +1,29 @@
+
+{% extends 'adminlte/login.html'%}
+{%load bootstrap4 %}
+{%block logo%}
+<div class="login-logo">
+     <a>{% block logo_text %}<b>E-</b>diaristas{% endblock logo_text %}</a>
+</div>
+
+{% endblock logo %}
+
+
+{% block login_form %}
+
+{% if messages %}
+<br>
+    {% for message in messages %}
+        <div class="alert {{ message.tags}} " role="alert">
+            {{ message }}
+        </div>
+{% endfor %}
+{% endif %}
+<form method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+ {% endblock login_form %}
