@@ -18,13 +18,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
-<<<<<<< HEAD
     path('administracao/',include('administracao.urls', namespace='administracao')),
-=======
-    path('',include('administracao.urls',namespace='administracao')),
->>>>>>> parent of 3451a08... autenticacao  finalizada
-=======
-    path('administracao/',include('administracao.urls', namespace='administracao')),
->>>>>>> cbaf1d1e81a58c4671f089b0910e966b481efa09
+
 ]

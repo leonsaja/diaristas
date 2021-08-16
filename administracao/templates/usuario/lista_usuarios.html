@@ -24,7 +24,7 @@
                 {% for usuario in usuarios %}
                 <tr>
                      <td>{{usuario.id}}</td>
-                    <td>{{usuario.username}}</td>
+                    <td><a href="{% url 'administracao:info_user' usuario.id %}">{{usuario.username}}</a></td>
                     <td>{{usuario.email}}</td>
                     <td><a href="{% url 'administracao:editar_usuario' usuario.id %}" class="btn btn-primary">Editar</a></td>
                 </tr>

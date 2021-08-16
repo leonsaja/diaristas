@@ -22,7 +22,7 @@
         <form method="POST">
             {% csrf_token %}
             {% bootstrap_form form %}
-
+            <small><a href="{%url 'administracao:resetar_senha'%}" class="nav-link">Esqueceu a sua senha </a></small>
             <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
         </form>
     </div>

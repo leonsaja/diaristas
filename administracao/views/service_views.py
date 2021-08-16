@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from administracao.forms.form_servico import ServicoForm
 from administracao.models import  Service
 from django.contrib.auth.decorators import login_required
-
+from django.core.mail import  send_mail
 @login_required
 def cadastrar_servico(request):
     form=ServicoForm(request.POST or None)
