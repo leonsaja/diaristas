@@ -4,9 +4,10 @@
 git clone https://github.com/treinaweb/multistack-ediaristas-python
 
 ### Instalar dependências
-'pip install -r requirements.txt'
+pip install -r requirements.txt
 
 ### Alterar configurações do BD no arquivo settings.py
+```
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -17,6 +18,7 @@ DATABASES = {
         'PASSWORD': 'senha_bd'
     }
 }
+```
 ### Migrar banco de dados
 python manage.py migrate
 
