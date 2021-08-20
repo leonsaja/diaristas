@@ -7,7 +7,7 @@
 ### Instalar dependências
 `pip install -r requirements.txt`
 
-### Alterar configurações do BD no arquivo `settings.py`
+### Alterar configurações do BD no arquivo  `settings.py`
 
 ```
 DATABASES = {
@@ -22,8 +22,10 @@ DATABASES = {
 }
 ```
 ### Migrar banco de dados
+
 `python manage.py migrate`
 
 ### Iniciar o servidor
+
 `python manage.py runserver`
 
