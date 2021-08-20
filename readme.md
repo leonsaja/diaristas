@@ -1,13 +1,13 @@
-#Projeto e-diaristas
-###Instalando o projeto
-####Clonar o projeto
-git clone https://github.com/treinaweb/multistack-ediaristas-python
+# Projeto e-diaristas
+### Instalando o projeto
+### Clonar o projeto
+'git clone https://github.com/treinaweb/multistack-ediaristas-python'
 
-####Instalar dependências
-pip install -r requirements.txt
+### Instalar dependências
+'pip install -r requirements.txt'
 
-####Alterar configurações do BD no arquivo settings.py
-DATABASES = {
+### Alterar configurações do BD no arquivo settings.py
+'DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'nome_do_bd',
@@ -16,26 +16,10 @@ DATABASES = {
         'USER': 'usuario_bd',
         'PASSWORD': 'senha_bd'
     }
-}
-####Migrar banco de dados
-python manage.py migrate
+}'
+### Migrar banco de dados
+'python manage.py migrate'
 
-####Iniciar o servidor
-python manage.py runserver
+### Iniciar o servidor
+'python manage.py runserver'
 
-About
-No description, website, or topics provided.
-Resources
- Readme
-Releases 1
-Semana 11
-Latest
-18 days ago
-Packages
-No packages published
-Languages
-Python
-81.1%
- 
-HTML
-18.9%
