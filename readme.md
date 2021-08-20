@@ -1,5 +1,6 @@
 # Projeto e-diaristas
 ### Instalando o projeto
+
 ### Clonar o projeto
 `git clone https://github.com/treinaweb/multistack-ediaristas-python`
 
@@ -7,6 +8,7 @@
 `pip install -r requirements.txt`
 
 ### Alterar configurações do BD no arquivo `settings.py`
+
 ```
 DATABASES = {
     'default': {
