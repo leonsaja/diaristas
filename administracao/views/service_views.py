@@ -26,6 +26,5 @@ def editar_servico(request,id):
         if form.is_valid():
             form.save()
             return redirect('administracao:listar_servicos')
-        
     return render(request, 'servico/form_servico.html',{'form':form})
     
