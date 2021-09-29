@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f(l^bz9k-7!u#@e&et#fxk1bu4rbm*1vx(=p-4xg%wccbu099$
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -36,14 +36,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'adminlte3',
     'bootstrap4',
-
+     'rest_framework',
+    'localflavor',
+    'api',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -137,3 +141,4 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'leonardosaja87@gmail.com'
 EMAIL_HOST_PASSWORD = 'ggbqkmbaujxajtmu'
+AUTH_USER_MODEL = 'api.Usuario'
