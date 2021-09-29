@@ -9,7 +9,7 @@ def cadastrar_servico(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect('administracao:listar_servicos')
+            return redirect('administracao:listar_servico')
         
     return render(request, 'servico/form_servico.html',{'form':form})
 @login_required
@@ -25,6 +25,7 @@ def editar_servico(request,id):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+
             return redirect('administracao:listar_servicos')
     return render(request, 'servico/form_servico.html',{'form':form})
     
