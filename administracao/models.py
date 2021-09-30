@@ -1,6 +1,6 @@
 from django.db import models
 
-class Service(models.Model):
+class Servico(models.Model):
 
     ICONE_CHOICES=(
         ('twf-cleaning-1','twf-cleaning-1'),

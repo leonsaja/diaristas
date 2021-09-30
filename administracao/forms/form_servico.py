@@ -1,5 +1,5 @@
 from django import forms
-from ..models import Service
+from ..models import Servico
 from decimal import Decimal
 
 class ServicoForm(forms.ModelForm):
@@ -15,7 +15,7 @@ class ServicoForm(forms.ModelForm):
     
     
     class Meta:
-        model=Service
+        model=Servico
         fields='__all__'
         
     def clean_valor_minimo(self):
