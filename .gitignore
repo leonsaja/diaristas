@@ -144,6 +144,9 @@ env.bak/
 venv.bak/
 venv
 
+documentos
+usuario
+
 # Spyder project settings
 .spyderproject
 .spyproject
