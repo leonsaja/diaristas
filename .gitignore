@@ -36,11 +36,6 @@ __pycache__/
 # C extensions
 *.so
 
-/ediaristas/.env
-
-
-
-
 # Distribution / packaging
 .Python
 build/
