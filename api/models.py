@@ -61,9 +61,12 @@ class Diaria(models.Model):
 
    data_atendimento = models.DateTimeField(null=False, blank=False)
    tempo_atendimento = models.IntegerField(null=False, blank=False)
-   status = models.IntegerField(null=False, blank=False, choices=STATUS_DIARIA_CHOICES, default=1)
-   preco = models.DecimalField(null=False, blank=False, decimal_places=2, max_digits=5)
-   valor_comissao = models.DecimalField(null=False, blank=False,decimal_places=2, max_digits=5)
+   status = models.IntegerField(
+       null=False, blank=False, choices=STATUS_DIARIA_CHOICES, default=1)
+   preco = models.DecimalField(
+       null=False, blank=False, decimal_places=2, max_digits=5)
+   valor_comissao = models.DecimalField(
+       null=False, blank=False, decimal_places=2, max_digits=5)
    logradouro = models.CharField(max_length=60, null=False, blank=False)
    numero = models.CharField(max_length=10, null=False, blank=False)
    bairro = models.CharField(max_length=30, null=False, blank=False)
@@ -84,7 +87,8 @@ class Diaria(models.Model):
                                on_delete=models.DO_NOTHING, related_name='cliente')
    diarista = models.ForeignKey(Usuario, null=True, blank=True,
                                 on_delete=models.DO_NOTHING, related_name='diarista')
-   servico= models.ForeignKey(Servico, null=False,blank=False, on_delete=models.DO_NOTHING)
+   servico = models.ForeignKey(
+       Servico, null=False, blank=False, on_delete=models.DO_NOTHING)
    candidatos=models.ManyToManyField(Usuario, blank=True, related_name='candidatos')
    created_at=models.DateTimeField(auto_now_add=True,null=True)
    updated_at=models.DateTimeField(auto_now=True,null=True)
