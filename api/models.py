@@ -1,13 +1,14 @@
 import os.path
 import uuid
 from django.contrib.auth.models import AbstractUser, UserManager
-
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.core.validators import validate_image_file_extension
 from localflavor.br.models import BRCPFField
 from api.managers.diarista_manager import DiaristaManager
 from localflavor.br.models import  BRCPFField
+from administracao.models import Servico
+
 
 def nome_arquivo_foto(instace, filename):
     ext= filename.split('.')[-1]
@@ -43,6 +44,53 @@ class Usuario(AbstractUser):
     REQUIRED_FIELDS = ('nome_completo', 'cpf', 'nascimento','tipo_usuario', 'reputacao','chave_pix','foto_documento','foto_usuario')
     objects = UserManager()
     diarista_objects = DiaristaManager()
+
+
+
+class Diaria(models.Model):
+    
+   STATUS_DIARIA_CHOICES = (
+       (1, "SEM_PAGAMENTO"),
+       (2, "PAGO"),
+       (3, "CONFIRMADO"),
+       (4, "CONCLUIDO"),
+       (5, "CANCELADO"),
+       (6, "AVALIADO"),
+       (7, "TRANSFERIDO")
+   )
+
+   data_atendimento = models.DateTimeField(null=False, blank=False)
+   tempo_atendimento = models.IntegerField(null=False, blank=False)
+   status = models.IntegerField(null=False, blank=False, choices=STATUS_DIARIA_CHOICES, default=1)
+   preco = models.DecimalField(null=False, blank=False, decimal_places=2, max_digits=5)
+   valor_comissao = models.DecimalField(null=False, blank=False,decimal_places=2, max_digits=5)
+   logradouro = models.CharField(max_length=60, null=False, blank=False)
+   numero = models.CharField(max_length=10, null=False, blank=False)
+   bairro = models.CharField(max_length=30, null=False, blank=False)
+   complemento = models.CharField(max_length=100, null=False, blank=True)
+   cep = models.CharField(max_length=10, null=False, blank=False)
+   cidade = models.CharField(max_length=30, null=False, blank=False)
+   estado = models.CharField(max_length=2, null=False, blank=False)
+   codigo_ibge = models.IntegerField(null=True, blank=True)
+   quantidade_quartos = models.IntegerField(null=False, blank=False)
+   quantidade_salas = models.IntegerField(null=False, blank=False)
+   quantidade_cozinhas = models.IntegerField(null=False, blank=False)
+   quantidade_banheiros = models.IntegerField(null=False, blank=False)
+   quantidade_quintais = models.IntegerField(null=False, blank=False)
+   quantidade_outros = models.IntegerField(null=False, blank=False)
+   observacoes = models.TextField(null=False, blank=True)
+   motivo_cancelamento = models.TextField(null=True, blank=True)
+   cliente = models.ForeignKey(Usuario, null=False, blank=False,
+                               on_delete=models.DO_NOTHING, related_name='cliente')
+   diarista = models.ForeignKey(Usuario, null=True, blank=True,
+                                on_delete=models.DO_NOTHING, related_name='diarista')
+   servico= models.ForeignKey(Servico, null=False,blank=False, on_delete=models.DO_NOTHING)
+   candidatos=models.ManyToManyField(Usuario, blank=True, related_name='candidatos')
+   created_at=models.DateTimeField(auto_now_add=True,null=True)
+   updated_at=models.DateTimeField(auto_now=True,null=True)
+    
+    
+    
 
 class CidadesAtendimento(models.Model):
     codigo_ibge=models.IntegerField(null=False,blank=False)
