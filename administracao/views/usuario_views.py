@@ -16,8 +16,6 @@ def cadastrar_usuario(request):
         if form.is_valid():
             form.save()
             return redirect('administracao:listar_usuarios')
-
-
     return render(request,'usuario/form_usuario.html',{'form':form})
 
 @login_required
@@ -25,6 +23,8 @@ def listar_usuarios(request):
     User=get_user_model()
     usuarios=User.objects.all()
     return render(request,'usuario/lista_usuarios.html',{'usuarios':usuarios})
+
+
 @login_required
 def editar_usuario(request,id):
     User=get_user_model()
