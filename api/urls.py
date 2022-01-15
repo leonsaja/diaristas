@@ -1,7 +1,7 @@
 from django.urls import  path
 
 from api.views import ediarista_localidades_view,endereco_cep_view,\
-        disponibilidade_atendimento_cidade,service_view,inicio_view,usuario_view,me_view,diaria_view
+        disponibilidade_atendimento_cidade,service_view,inicio_view,usuario_view,me_view,diaria_view,pagamento_diaria_view
 
 app_name='api'
 urlpatterns = [
@@ -13,4 +13,6 @@ urlpatterns = [
         path('usuario',usuario_view.Usuario.as_view(),name='usuario-list'),
         path('me', me_view.Me.as_view(), name='me-list'),
         path('diarias', diaria_view.Diaria.as_view(), name='diaria-list'),
+        path('diarias/<int:diaria_id>/pagamento',pagamento_diaria_view.PagamentoDiaria.as_view(),name='pagamento-list')
+        
 ]
