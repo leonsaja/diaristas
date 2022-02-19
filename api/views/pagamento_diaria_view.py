@@ -4,9 +4,14 @@ from api.serializers import pagamento_diaria_serializer
 from ..service import diaria_service
 from rest_framework  import status as status_http
 from ..service.pagamento_diaria_service import realizar_pagamento
+from ..permissions import cliente_permission
+
 class PagamentoDiaria(APIView):
+   permission_classes=[cliente_permission.ClientePermission, ]
+    
    def post(self, request, diaria_id, format=None):
        diaria=diaria_service.listar_diaria_id(diaria_id)
+       self.check_object_permissions(self.request, diaria)
        serializer_pagamento = pagamento_diaria_serializer.PagamentoDiariaSerializer(data=request.data)
        
        if serializer_pagamento.is_valid():
